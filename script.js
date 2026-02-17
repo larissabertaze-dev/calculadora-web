@@ -50,90 +50,70 @@ toggle.addEventListener("click", () => {
   toggle.textContent =
     document.body.classList.contains("dark") ? "☀️" : "🌙";
 });
+    useEffect(() => {
+        document.body.classList.toggle("dark", dark);
+    }, [dark]);
 
-const { useState, useEffect } = React;
-  }
+    const buttons = [
+        "C",
+        "⌫",
+        "%",
+        "/",
+        "7",
+        "8",
+        "9",
+        "*",
+        "4",
+        "5",
+        "6",
+        "-",
+        "1",
+        "2",
+        "3",
+        "+",
+        "0",
+        ".",
+        "=",
+    ];
 
-  // ⌨️ Teclado
-  useEffect(() => {
-    function handleKey(e) {
-      if (!isNaN(e.key) || "+-*/.%".includes(e.key)) append(e.key);
-      if (e.key === "Enter") calculate();
-      if (e.key === "Backspace") deleteLast();
-      if (e.key === "Escape") clearDisplay();
+    function handleClick(btn) {
+        if (btn === "C") return clearDisplay();
+        if (btn === "⌫") return deleteLast();
+        if (btn === "=") return calculate();
+        append(btn);
     }
 
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  });
+    return (
+        <div className="calculator">
+            <div className="top-bar">
+                <h2>Calculadora</h2>
+                <button onClick={() => setDark(!dark)}>
+                    {dark ? "☀️" : "🌙"}
+                </button>
+            </div>
 
-  useEffect(() => {
-    document.body.classList.toggle("dark", dark);
-  }, [dark]);
+            <div className="history">
+                {history.map((item, i) => (
+                    <p key={i}>{item}</p>
+                ))}
+            </div>
 
-  const buttons = [
-    "C",
-    "⌫",
-    "%",
-    "/",
-    "7",
-    "8",
-    "9",
-    "*",
-    "4",
-    "5",
-    "6",
-    "-",
-    "1",
-    "2",
-    "3",
-    "+",
-    "0",
-    ".",
-    "=",
-  ];
+            <input value={display} disabled className="display" />
 
-  function handleClick(btn) {
-    if (btn === "C") return clearDisplay();
-    if (btn === "⌫") return deleteLast();
-    if (btn === "=") return calculate();
-    append(btn);
-  }
-
-  return (
-    <div className="calculator">
-      <div className="top-bar">
-        <h2>Calculadora</h2>
-        <button onClick={() => setDark(!dark)}>
-          {dark ? "☀️" : "🌙"}
-        </button>
-      </div>
-
-      <div className="history">
-        {history.map((item, i) => (
-          <p key={i}>{item}</p>
-        ))}
-      </div>
-
-      <input value={display} disabled className="display" />
-
-      <div className="buttons">
-        {buttons.map((btn, i) => (
-          <button
-            key={i}
-            onClick={() => handleClick(btn)}
-            className={
-              btn === "="
-                ? "equal"
-                : btn === "0"
-                ? "zero"
-                : ""
-            }
-          >
-            {btn}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-}  );
+            <div className="buttons">
+                {buttons.map((btn, i) => (
+                    <button
+                        key={i}
+                        onClick={() => handleClick(btn)}
+                        className={btn === "="
+                            ? "equal"
+                            : btn === "0"
+                                ? "zero"
+                                : ""}
+                    >
+                        {btn}
+                    </button>
+                ))}
+            </div>
+        </div>
+    );

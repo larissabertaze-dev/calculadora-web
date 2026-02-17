@@ -37,8 +37,7 @@ button {
 .equal {
   grid-column: span 2;
   background: #28a745;
-  color: white;
-  color: rgb(15, 3, 3);
+  color: rgb(146, 131, 131);
 }
 
 .zero {
