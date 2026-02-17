@@ -53,13 +53,30 @@ body {
   margin: 10px 0;
 }
 
-.buttons{
-  height: 70px; /* Botões maiores */
-  font-size: 22px; /* Número maior */
-  font-weight: bold;
-  border: none;
-  border-radius: 14px;
-  background: var(--btn);
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  height: 65px;
+  font-size: 18px;
+  font-weight: 500;
+  border: 1px solid #bfbfbf; /* Borda padrão calculadora */
+  border-radius: 6px; /* Menos arredondado */
+  background: #f2f2f2; /* Cinza/fw padrão */
   cursor: pointer;
-  transition: 0.2s;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.1);
+  transition: 0.1s;
+}
+
+button:hover {
+  background: #e6e6e6;
+}
+
+button:active {
+  background: #d9d9d9;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); /* Efeito pressionado */
+  transform: scale(0.98);
 }
