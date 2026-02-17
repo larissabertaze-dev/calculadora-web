@@ -20,11 +20,22 @@ function calculate() {
     const result = eval(expression);
 
     addHistory(`${display.value} = ${result}`);
+    function calculate() {
+  try {
+    const expression = display.value.replace('%', '/100');
+    const result = eval(expression);
+
+    // 👉 Trocar símbolos para exibição
+    const formatted = display.value
+      .replaceAll('*', '×')
+      .replaceAll('/', '÷');
+
+    addHistory(`${formatted} = ${result}`);
     display.value = result;
+
   } catch {
     display.value = "Erro";
   }
-}
 
 function addHistory(text) {
   const item = document.createElement("p");
