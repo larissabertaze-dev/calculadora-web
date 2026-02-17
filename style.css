@@ -1,19 +1,17 @@
-:root {
-  border: none;
-  padding: 5px 10px;
-  border-radius: 10px;
-  cursor: pointer;
+body {
+  justify-content: space-between;
+  align-items: center;
 }
 
 .history {
   height: 60px;
   overflow-y: auto;
   font-size: 12px;
-  color: rgb(12, 1, 1);
-  margin-bottom: 5px;
+  color: gray;
+  margin: 10px 0;
 }
 
-#display {
+.display {
   width: 100%;
   height: 50px;
   font-size: 24px;
@@ -33,26 +31,15 @@ button {
   font-size: 18px;
   border: none;
   border-radius: 12px;
-  background: var(--btn);
   cursor: pointer;
 }
 
-.operator {
-  background: var(--operator);
-  color: #080000;
-}
-
 .equal {
+  grid-column: span 2;
   background: #28a745;
-  color: #070202;
+  color: white;
 }
 
 .zero {
   grid-column: span 2;
-}
-
-@media (max-width: 400px) {
-  .calculator {
-    width: 95%;
-  }
 }
