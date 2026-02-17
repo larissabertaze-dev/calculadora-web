@@ -16,12 +16,6 @@ function deleteLast() {
 
 function calculate() {
   try {
-    const expression = display.value.replace("%", "/100");
-    const result = eval(expression);
-
-    addHistory(`${display.value} = ${result}`);
-    function calculate() {
-  try {
     const expression = display.value.replace('%', '/100');
     const result = eval(expression);
 
@@ -36,6 +30,7 @@ function calculate() {
   } catch {
     display.value = "Erro";
   }
+}
 
 function addHistory(text) {
   const item = document.createElement("p");
