@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,65 +8,49 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="calculator">
+  <div class="calculator">
 
-      <!-- 🌗 Toggle Tema -->
-      <div class="top-bar">
-        <h2>Calculadora</h2>
-        <button id="themeToggle">🌙</button>
-      </div>
-
-      <!-- 📜 Histórico -->
-      <div class="history" id="history"></div>
-
-      <!-- 🔢 Visor -->
-      <input type="text" id="display" disabled>
-
-      <!-- 🔘 Botões -->
-      <div class="buttons">
-        <button onclick="clearDisplay()">C</button>
-        <button onclick="deleteLast()">⌫</button>
-        <button onclick="append('%')">%</button>
-        <button class="operator" onclick="append('/')">÷</button>
-
-        <button onclick="append('7')">7</button>
-        <button onclick="append('8')">8</button>
-        <button onclick="append('9')">9</button>
-        <button class="operator" onclick="append('*')">×</button>
-
-        <button onclick="append('4')">4</button>
-        <button onclick="append('5')">5</button>
-        <button onclick="append('6')">6</button>
-        <button class="operator" onclick="append('-')">−</button>
-
-        <button onclick="append('1')">1</button>
-        <button onclick="append('2')">2</button>
-        <button onclick="append('3')">3</button>
-        <button class="operator" onclick="append('+')">+</button>
-
-        <button onclick="append('0')" class="zero">0</button>
-        <button onclick="append('.')">.</button>
-        <button class="equal" onclick="calculate()">=</button>
-      </div>
-
+    <!-- Topo -->
+    <div class="top-bar">
+      <h2>Calculadora</h2>
+      <button id="themeToggle">🌙</button>
     </div>
+
+    <!-- Histórico -->
+    <div id="history" class="history"></div>
+
+    <!-- Visor -->
+    <input type="text" id="display" disabled>
+
+    <!-- Botões -->
+    <div class="buttons">
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="deleteLast()">⌫</button>
+      <button onclick="append('%')">%</button>
+      <button class="operator" onclick="append('/')">÷</button>
+
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button class="operator" onclick="append('*')">×</button>
+
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button class="operator" onclick="append('-')">−</button>
+
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button class="operator" onclick="append('+')">+</button>
+
+      <button class="zero" onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+      <button class="equal" onclick="calculate()">=</button>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
-</body>
-</html>  
-
-  <!-- React CDN -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="root"></div>
-
-  <script type="text/babel" src="script.js"></script>
 </body>
 </html>
