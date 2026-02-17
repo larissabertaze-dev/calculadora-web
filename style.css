@@ -80,3 +80,15 @@ button:active {
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); /* Efeito pressionado */
   transform: scale(0.98);
 }
+
+.display {
+  width: 100%;
+  height: 80px; /* Barrinha maior */
+  font-size: 32px; /* Número maior */
+  text-align: right;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #bfbfbf;
+  border-radius: 8px;
+  background: #ffffff;
+}
