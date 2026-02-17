@@ -38,6 +38,11 @@ function addHistory(text) {
   historyDiv.prepend(item);
 }
 
+function limpar() {
+  visor.value = "";
+  acabouDeCalcular = false;
+}
+
 // 🌗 Tema claro/escuro
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
@@ -53,38 +58,3 @@ window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") clearDisplay();
 });
 
-const visor = document.getElementById("visor");
-
-let acabouDeCalcular = false;
-
-function adicionarNumero(numero) {
-  if (acabouDeCalcular) {
-    visor.value = "";
-    acabouDeCalcular = false;
-  }
-
-  visor.value += numero;
-}
-
-function adicionarOperador(op) {
-  acabouDeCalcular = false;
-  visor.value += op;
-}
-
-function calcular() {
-  try {
-    visor.value = eval(visor.value);
-    acabouDeCalcular = true;
-  } catch {
-    visor.value = "Erro";
-  }
-}
-
-function limpar() {
-  visor.value = "";
-  acabouDeCalcular = false;
-}
-
-function apagar() {
-  visor.value = visor.value.slice(0, -1);
-}
