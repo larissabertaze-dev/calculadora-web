@@ -82,8 +82,8 @@ button:active {
 }
 
 #display {
-  width: 100%;
-  height: 80px; /* Barrinha maior */
+  width: 95%;
+  height: 70px; /* Barrinha maior */
   font-size: 32px; /* Número maior */
   text-align: right;
   margin-bottom: 12px;
