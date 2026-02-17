@@ -81,7 +81,7 @@ button:active {
   transform: scale(0.98);
 }
 
-.display {
+#display {
   width: 100%;
   height: 80px; /* Barrinha maior */
   font-size: 32px; /* Número maior */
