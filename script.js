@@ -38,40 +38,9 @@ function addHistory(text) {
   historyDiv.prepend(item);
 }
 
-const display = document.getElementById("visor");
-
-let acabouDeCalcular = false;
-
-function adicionarNumero(numero) {
-  if (acabouDeCalcular) {
-    display.value = "";
-    acabouDeCalcular = false;
-  }
-
-  display.value += numero;
-}
-
-function adicionarOperador(op) {
-  acabouDeCalcular = false;
-  display.value += op;
-}
-
-function calcular() {
-  try {
-    display.value = eval(display.value);
-    acabouDeCalcular = true;
-  } catch {
-    display.value = "Erro";
-  }
-}
-
 function limpar() {
-  display.value = "";
+  visor.value = "";
   acabouDeCalcular = false;
-}
-
-function apagar() {
-  display.value = display.value.slice(0, -1);
 }
 
 // 🌗 Tema claro/escuro
