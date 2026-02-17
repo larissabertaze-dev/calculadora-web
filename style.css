@@ -52,3 +52,14 @@ body {
   color: gray;
   margin: 10px 0;
 }
+
+.buttons{
+  height: 70px; /* Botões maiores */
+  font-size: 22px; /* Número maior */
+  font-weight: bold;
+  border: none;
+  border-radius: 14px;
+  background: var(--btn);
+  cursor: pointer;
+  transition: 0.2s;
+}
