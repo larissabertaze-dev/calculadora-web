@@ -62,6 +62,12 @@ Projeto criado para fins de estudo e prática em:
 * Versionamento com Git e GitHub
 
 ---
+## 📷 Projeto
+
+<img width="500" height="550" alt="image" src="https://github.com/user-attachments/assets/7b42e7a5-ddb1-4025-85a1-6b7b26867514" />
+<img width="500" height="550" alt="image" src="https://github.com/user-attachments/assets/e7fbc937-158e-4f98-85cd-b0d103810e72" />
+
+
 
 ## 👩‍💻 Autora
 
